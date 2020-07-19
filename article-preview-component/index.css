@@ -20,7 +20,7 @@ body {
   border-radius: 0.5rem;
   background-color: whitesmoke;
 
-  box-shadow: 0 0 6rem #dee5ed;
+  box-shadow: 0 0 1.5rem #dee5ed;
 }
 
 .card-container > img {
@@ -74,6 +74,8 @@ body {
   display: grid;
   place-items: center;
 
+  position: relative;
+
   height: 2.5rem;
   width: 2.5rem;
   margin-left: auto;
@@ -83,6 +85,30 @@ body {
   background-color: #eef1f9;
 
   cursor: pointer;
+}
+
+.share-tooltip {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  position: absolute;
+  top: -3.5rem;
+
+  width: 10rem;
+  padding: 0.5rem;
+
+  color: #818b9f;
+  font-size: 0.8rem;
+  letter-spacing: 0.2rem;
+
+  border-radius: 0.5rem;
+  background-color: #4b5569;
+}
+
+.share-tooltip > img {
+  height: 1rem;
+  width: 1rem;
 }
 
 footer {

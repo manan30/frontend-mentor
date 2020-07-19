@@ -85,6 +85,8 @@ body {
   background-color: #eef1f9;
 
   cursor: pointer;
+
+  transition: all 1s cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 
 .share-tooltip {

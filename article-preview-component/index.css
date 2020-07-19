@@ -120,3 +120,35 @@ footer {
 
   text-align: center;
 }
+
+.slide-in {
+  animation: slideUp 1s ease-in-out;
+}
+
+.slide-out {
+  animation: slideDown 1s ease-in-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+}

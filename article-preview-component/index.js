@@ -16,21 +16,31 @@
   tooltipDiv.appendChild(facebookIcon);
   tooltipDiv.appendChild(twitterIcon);
   tooltipDiv.appendChild(pinterestIcon);
-  tooltipDiv.classList.add(['share-tooltip']);
+  tooltipDiv.classList.add('share-tooltip');
 
   function toggleShareTooltip(toggleStatus) {
-    console.log({ isShareTooltipActive, toggleStatus });
     if (toggleStatus) {
       isShareTooltipActive = true;
+      tooltipDiv.classList.remove('slide-out');
+      tooltipDiv.classList.add('slide-in');
       shareIcon.appendChild(tooltipDiv);
     } else {
-      shareIcon.removeChild(tooltipDiv);
+      tooltipDiv.classList.remove('slide-in');
+      tooltipDiv.classList.add('slide-out');
+
+      tooltipDiv.addEventListener(
+        'animationend',
+        () => shareIcon.removeChild(tooltipDiv),
+        { once: true }
+      );
     }
   }
 
   shareIcon.addEventListener('click', function toggle(e) {
     e.stopPropagation();
-    toggleShareTooltip(true);
+    if (!isShareTooltipActive) {
+      toggleShareTooltip(true);
+    }
   });
 
   document.addEventListener('click', function toggle() {

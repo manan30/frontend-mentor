@@ -1,0 +1,96 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  height: 100vh;
+  width: calc(100vw - 50%);
+  margin: 0;
+  padding: 0 25%;
+
+  font-family: 'Work Sans', sans-serif;
+
+  background-color: #eef2f7;
+}
+
+.card-container {
+  display: flex;
+  width: 100%;
+
+  border-radius: 0.5rem;
+  background-color: whitesmoke;
+
+  box-shadow: 0 0 6rem #dee5ed;
+}
+
+.card-container > img {
+  height: inherit;
+  width: 40%;
+
+  border-radius: 0.5rem 0 0 0.5rem;
+
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.card-container > div {
+  flex: 1;
+
+  padding: 2rem;
+}
+
+.contact-container {
+  display: flex;
+  align-items: center;
+
+  margin-top: 1.2rem;
+}
+
+.contact-container > img {
+  height: 3rem;
+  width: 3rem;
+
+  border-radius: 50%;
+
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.contact-container > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  margin-left: 1rem;
+}
+
+.contact-container .share-icon {
+  display: grid;
+  place-items: center;
+
+  height: 2.5rem;
+  width: 2.5rem;
+  margin-left: auto;
+
+  border-radius: 50%;
+
+  background-color: #eef1f9;
+
+  cursor: pointer;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  margin: 1rem;
+
+  text-align: center;
+}

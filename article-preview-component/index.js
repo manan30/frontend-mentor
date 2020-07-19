@@ -4,18 +4,23 @@
 
   const twitterIcon = document.createElement('img');
   twitterIcon.src = './images/icon-twitter.svg';
+  twitterIcon.alt = 'twitter-icon';
 
   const facebookIcon = document.createElement('img');
   facebookIcon.src = './images/icon-facebook.svg';
+  facebookIcon.alt = 'facebook-icon';
 
   const pinterestIcon = document.createElement('img');
   pinterestIcon.src = './images/icon-pinterest.svg';
+  pinterestIcon.alt = 'pinterest-icon';
 
   const shareIcon = document.createElement('img');
   shareIcon.src = './images/icon-share.svg';
+  shareIcon.alt = 'share-icon';
 
   const closeIcon = document.createElement('img');
   closeIcon.src = './images/icon-close.svg';
+  closeIcon.alt = 'close-icon';
 
   const tooltipDiv = document.createElement('div');
   tooltipDiv.innerText = 'SHARE';
@@ -28,8 +33,6 @@
     const currIcon = shareIconEle.firstChild;
 
     if (toggleStatus) {
-      isShareTooltipActive = true;
-
       tooltipDiv.classList.remove('slide-out');
       tooltipDiv.classList.add('slide-in');
 
@@ -56,12 +59,9 @@
   shareIconEle.addEventListener('click', function toggle(e) {
     e.stopPropagation();
     if (!isShareTooltipActive) {
+      isShareTooltipActive = true;
       toggleShareTooltip(true);
-    }
-  });
-
-  document.addEventListener('click', function toggle() {
-    if (isShareTooltipActive) {
+    } else {
       isShareTooltipActive = false;
       toggleShareTooltip(false);
     }

@@ -157,3 +157,34 @@ footer {
     transform: translateY(2rem);
   }
 }
+
+@media screen and (max-width: 815px) {
+  body {
+    width: calc(100vw - 20%);
+    padding: 0 10%;
+  }
+
+  .card-container {
+    flex-direction: column;
+  }
+
+  .card-container > img {
+    height: 40%;
+    width: 100%;
+
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+
+  .card-container > div {
+    padding: 1.5rem;
+  }
+
+  footer {
+    position: relative;
+
+    margin: 1rem;
+
+    font-size: 0.8rem;
+    text-align: center;
+  }
+}

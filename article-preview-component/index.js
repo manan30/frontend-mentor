@@ -1,5 +1,6 @@
 (function () {
   const isMobile = window.innerWidth < 815;
+  let closeIconEle;
 
   let isShareTooltipActive = false;
   const contactContainer = document.querySelector('.contact-container');
@@ -33,7 +34,10 @@
   tooltipDiv.classList.add('share-tooltip');
 
   if (isMobile) {
-    tooltipDiv.appendChild(closeIcon);
+    closeIconEle = document.createElement('div');
+    closeIconEle.classList.add('close-icon');
+    closeIconEle.appendChild(closeIcon);
+    tooltipDiv.appendChild(closeIconEle);
   }
 
   function toggleShareTooltip(toggleStatus) {
@@ -86,7 +90,7 @@
   });
 
   if (isMobile) {
-    closeIcon.addEventListener('click', function toggle(e) {
+    closeIconEle.addEventListener('click', function toggle(e) {
       console.log(e);
       e.stopPropagation();
       isShareTooltipActive = false;

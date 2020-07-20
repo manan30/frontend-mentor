@@ -3,7 +3,8 @@ body {
   place-items: center;
 
   height: 100vh;
-  width: 100vw;
+  width: calc(100vw - 40%);
+  padding: 0 20%;
   margin: 0;
 
   font-family: 'Manrope', sans-serif;
@@ -49,4 +50,14 @@ body {
 
   color: inherit;
   font-weight: bolder;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+
+  width: calc(60% - 2rem);
+  margin: 1rem;
+
+  text-align: center;
 }

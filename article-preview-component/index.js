@@ -1,5 +1,9 @@
 (function () {
+  const isMobile = window.innerWidth < 815;
+  let closeIconEle;
+
   let isShareTooltipActive = false;
+  const contactContainer = document.querySelector('.contact-container');
   const shareIconEle = document.querySelector('.share-icon');
 
   const twitterIcon = document.createElement('img');
@@ -29,6 +33,13 @@
   tooltipDiv.appendChild(pinterestIcon);
   tooltipDiv.classList.add('share-tooltip');
 
+  if (isMobile) {
+    closeIconEle = document.createElement('div');
+    closeIconEle.classList.add('close-icon');
+    closeIconEle.appendChild(closeIcon);
+    tooltipDiv.appendChild(closeIconEle);
+  }
+
   function toggleShareTooltip(toggleStatus) {
     const currIcon = shareIconEle.firstChild;
 
@@ -36,23 +47,34 @@
       tooltipDiv.classList.remove('slide-out');
       tooltipDiv.classList.add('slide-in');
 
-      shareIconEle.appendChild(tooltipDiv);
-      shareIconEle.style.backgroundColor = '#718095';
+      if (!isMobile) {
+        shareIconEle.appendChild(tooltipDiv);
+        shareIconEle.style.backgroundColor = '#718095';
 
-      shareIconEle.removeChild(shareIconEle.children[0]);
-      shareIconEle.firstChild.replaceWith(closeIcon);
+        shareIconEle.removeChild(shareIconEle.children[0]);
+        shareIconEle.firstChild.replaceWith(closeIcon);
+      } else {
+        contactContainer.appendChild(tooltipDiv);
+      }
     } else {
       tooltipDiv.classList.remove('slide-in');
       tooltipDiv.classList.add('slide-out');
       tooltipDiv.addEventListener(
         'animationend',
-        () => shareIconEle.removeChild(tooltipDiv),
+        () => {
+          if (!isMobile) shareIconEle.removeChild(tooltipDiv);
+          else contactContainer.removeChild(tooltipDiv);
+        },
         { once: true }
       );
 
-      shareIconEle.style.backgroundColor = '#eef1f9';
+      if (!isMobile) {
+        shareIconEle.style.backgroundColor = '#eef1f9';
 
-      shareIconEle.firstChild.replaceWith(shareIcon);
+        shareIconEle.firstChild.replaceWith(shareIcon);
+      } else {
+        contactContainer.removeChild(tooltipDiv);
+      }
     }
   }
 
@@ -66,4 +88,13 @@
       toggleShareTooltip(false);
     }
   });
+
+  if (isMobile) {
+    closeIconEle.addEventListener('click', function toggle(e) {
+      console.log(e);
+      e.stopPropagation();
+      isShareTooltipActive = false;
+      toggleShareTooltip(false);
+    });
+  }
 })();

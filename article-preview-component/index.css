@@ -179,6 +179,10 @@ footer {
     padding: 1.5rem;
   }
 
+  .contact-container {
+    position: relative;
+  }
+
   footer {
     position: relative;
 
@@ -186,5 +190,19 @@ footer {
 
     font-size: 0.8rem;
     text-align: center;
+  }
+
+  .share-tooltip {
+    flex-direction: row !important;
+    justify-content: space-evenly !important;
+    top: 0 !important;
+    bottom: -1.5rem;
+
+    height: 3.5rem;
+    width: calc(100% + 2rem);
+    margin-left: -1.5rem !important;
+
+    animation: none;
+    border-radius: 0 0 0.5rem 0.5rem !important;
   }
 }

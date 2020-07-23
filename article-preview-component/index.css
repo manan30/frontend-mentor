@@ -127,11 +127,17 @@ footer {
 }
 
 a {
-  color: inherit;
+  color: #3772ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 a:visited {
-  color: inherit;
+  color: #3772ff;
+  text-decoration: none;
 }
 
 .slide-in {

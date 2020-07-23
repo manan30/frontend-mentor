@@ -1,0 +1,38 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  height: 100vh;
+  width: calc(100vw - 50%);
+  margin: 0;
+  padding: 0 25%;
+
+  font-family: 'Manrope', sans-serif;
+
+  background-color: #eef2f7;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  margin: 1rem;
+
+  text-align: center;
+}
+
+a {
+  color: #3772ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #3772ff;
+  text-decoration: none;
+}

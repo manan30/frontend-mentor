@@ -144,5 +144,43 @@ a:visited {
   border-radius: 1rem;
   background-color: #eef2f7;
 
-  transform: translateY(-8.5rem);
+  transform: translateY(-9.5rem);
+}
+
+.units {
+  display: flex;
+  align-items: center;
+
+  margin-top: 0.3rem;
+
+  line-height: 0.6rem;
+  font-size: 0.6rem;
+}
+
+@media screen and (max-width: 815px) {
+  body {
+    height: 100vh;
+    width: calc(100vw - 10%);
+    padding: 0 5%;
+
+    background-image: url(./images/bg-mobile.png);
+  }
+
+  .main-container {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .card-1 {
+    width: calc(100% - 6rem);
+  }
+
+  .card-2 {
+    width: calc(100% - 4rem);
+    margin-left: 0;
+  }
+
+  .flag {
+    transform: translateY(1rem) translateX(calc(-50% + 1rem));
+  }
 }
